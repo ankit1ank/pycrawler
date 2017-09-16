@@ -1,6 +1,6 @@
-##PyCrawler
+## PyCrawler
 
-####Installation:
+#### Installation:
 
 1. Create a virtualenv
 2. Clone the repo
