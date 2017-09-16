@@ -10,7 +10,7 @@
 virtualenv env
 cd env
 source ./bin/activate
-git clone {{repo url}}
+git clone https://github.com/ankit1ank/pycrawler.git
 cd pycrawler
 pip install -r requirements.txt
 python pycrawler.py http://news.ycombinator.com
