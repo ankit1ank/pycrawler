@@ -1,6 +1,8 @@
-import re, requests
+import re
+import requests
 from sys import argv, exit
 import parsers
+
 
 class PyCrawler():
     seed_url = ""
@@ -9,7 +11,7 @@ class PyCrawler():
     visited = set()
     max_count = 0
 
-    def __init__(self, seed_url, max_count = 0):
+    def __init__(self, seed_url, max_count=0):
         pattern = re.compile(self.url_regex)
         if pattern.match(seed_url):
             self.seed_url = seed_url
@@ -18,7 +20,6 @@ class PyCrawler():
         else:
             # Crawler can only be instantiated with valid urls
             exit("Invalid seed url used.")
-
 
     def get_request(self, url):
         """
@@ -35,7 +36,6 @@ class PyCrawler():
                 # Handle network errors here
                 # Eg. Retry failed requests
                 pass
-
 
     def start(self):
         """
@@ -55,7 +55,6 @@ class PyCrawler():
                     self.to_visit.extend(urls)
                 if parsed_html:
                     self.parsed_output(parsed_html, url)
-
 
     def parsed_output(self, parsed_html, url):
         """
