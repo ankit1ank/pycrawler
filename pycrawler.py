@@ -52,7 +52,9 @@ class PyCrawler():
                 urls = parsed_dict["urls"]
                 parsed_html = parsed_dict["html"]
                 if urls:
-                    self.to_visit.extend(urls)
+                    for url in urls:
+                        if url not in self.visited:
+                            self.to_visit.append(url)
                 if parsed_html:
                     self.parsed_output(parsed_html, url)
 

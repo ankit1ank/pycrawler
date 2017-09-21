@@ -26,9 +26,3 @@ def html_parser(text, url):
             if url.startswith("http"):
                 urls.append(url)
         return {"html": html, "urls": urls}
-
-
-if __name__ == "__main__":
-    # Test parsers with local files
-    with open("ankitgoel.html") as file:
-        print html_parser(file.read())
